@@ -1,0 +1,252 @@
+body {
+  background: linear-gradient(135deg, #b3bcc5 0%, #7b84a1 100%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+body #contenido {
+  max-width: 460px;
+  padding: 20px;
+  text-align: center;
+}
+body #contenido section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+body #contenido .itinerario-item,
+body #contenido .opcion-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px 0;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+body #contenido .opcion-item img {
+  width: 80px;
+  height: 80px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "MonteCarlo";
+}
+
+p {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.entrada {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+}
+.entrada h1 {
+  font-size: 80px;
+  margin: 0;
+  color: #d6bc9d;
+  padding: 0;
+  line-height: 1;
+}
+.entrada span {
+  font-size: 80px;
+  color: #5a361c;
+  font-family: "MonteCarlo";
+  line-height: 1;
+}
+
+.saludo {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+}
+.saludo img {
+  max-width: 180px;
+  margin: auto;
+}
+.saludo h1 {
+  font-size: 80px;
+  margin: 0;
+  color: #5e3b1a;
+  padding: 0;
+  line-height: 1;
+}
+.saludo p {
+  font-family: "MonteCarlo", cursive;
+  font-size: 45px;
+  color: #5e3b1a;
+  margin: 0;
+}
+
+.presentacion {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+.presentacion img {
+  max-width: 180px;
+  margin: auto;
+}
+.presentacion h1 {
+  font-size: 80px;
+  margin: 0;
+  color: #5e3b1a;
+  padding: 0;
+  line-height: 1;
+}
+.presentacion p {
+  font-family: "MonteCarlo", cursive;
+  font-size: 40px;
+  color: #5e3b1a;
+  margin: 0;
+  font-weight: 600;
+  max-width: 280px;
+  margin: auto;
+  line-height: 1.1;
+}
+
+.presentacion2 {
+  background: url(imagenes/presentacion2.jpg);
+  min-height: 650px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+.presentacion2 img {
+  max-width: 180px;
+  margin: auto;
+}
+.presentacion2 h1 {
+  font-size: 80px;
+  margin: 0;
+  color: #5e3b1a;
+  padding: 0;
+  line-height: 1;
+}
+.presentacion2 p {
+  font-family: "MonteCarlo", cursive;
+  font-size: 40px;
+  color: #5e3b1a;
+  margin: 0;
+  font-weight: 600;
+  max-width: 280px;
+  margin: auto;
+  line-height: 1.1;
+}
+
+.presentacion3 {
+  background: url(imagenes/presentacion2.jpg);
+  min-height: 650px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+.presentacion3 p {
+  font-family: "MonteCarlo", cursive;
+  font-size: 28px;
+  color: #5e3b1a;
+  margin: 0;
+  font-weight: 600;
+  max-width: 280px;
+  margin: auto;
+  line-height: 1.1;
+}
+.presentacion3 h4 {
+  font-size: 40px;
+  color: #5e3b1a;
+  margin: 10px 0;
+  line-height: 1;
+}
+.presentacion3 img {
+  max-width: 300px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.padres {
+  background: url(imagenes/papitos.jpg);
+  min-height: 650px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+.padres p {
+  font-family: "MonteCarlo", cursive;
+  font-size: 28px;
+  color: #5e3b1a;
+  margin: 0;
+  font-weight: 600;
+  max-width: 280px;
+  margin: auto;
+  line-height: 1.1;
+}
+.padres h3 {
+  font-size: 40px;
+  color: #5e3b1a;
+  margin: 10px 0;
+  line-height: 1;
+}
+.padres img {
+  max-width: 200px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.agradecimiento,
+.evento,
+.itinerario,
+.genero {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+.agradecimiento img,
+.evento img,
+.itinerario img,
+.genero img {
+  max-width: 180px;
+  margin: auto;
+}
+.agradecimiento p,
+.evento p,
+.itinerario p,
+.genero p {
+  font-family: "MonteCarlo", cursive;
+  font-size: 40px;
+  color: #5e3b1a;
+  margin: 0;
+  font-weight: 600;
+  max-width: 280px;
+  margin: auto;
+  line-height: 1.1;
+}/*# sourceMappingURL=estilos.css.map */

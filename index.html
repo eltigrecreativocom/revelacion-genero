@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitación Revelación de Género</title>
+    <!--fuentes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Delius&family=Great+Vibes&family=Meow+Script&family=MonteCarlo&display=swap"
+        rel="stylesheet">
+    <!--fuentes-->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div id="contenido">
+
+        <!-- ENTRADA -->
+        <section entrada class="entrada">
+            <h1 item1></h1>
+            <span separador></span>
+            <h1 item2></h1>
+        </section>
+
+        <!-- SALUDO -->
+        <section saludo class="saludo">
+            <img imagen alt="Saludo">
+            <h1 titulo></h1>
+            <p mensaje></p>
+        </section>
+
+        <!-- PRESENTACION -->
+        <section presentacion class="presentacion">
+            <p entrada></p>
+            <!--p frase></p>
+            <p><b fraseDestacada></b></p>
+            <img imagenEcografia alt="Ecografía"-->
+        </section>
+        <section presentacion class="presentacion2">
+            <img ositovolador alt="">
+            <p pronto></p>
+        </section>
+
+        <section presentacion class="presentacion3">
+            <p frase></p>
+            <h4><b fraseDestacada></b></h4>
+            <img imagenEcografia alt="Ecografía">
+        </section>
+
+        <!-- PADRES -->
+        <section padres class="padres">
+            <p titulo></p>
+            <h3 nombres></h3>
+            <p fraseInvitacion></p>
+
+            <img imagen alt="Papás">
+        </section>
+
+        <!-- EVENTO -->
+        <section evento class="evento">
+            <h2>Detalles del Evento</h2>
+
+            <div fecha>
+                <p>
+                    <b diaSemana></b>
+                    <span dia></span> de <span mes></span> <span año></span>
+                </p>
+                <p>Hora: <b hora></b></p>
+            </div>
+
+            <div lugarPrincipal>
+                <h3 titulo></h3>
+                <img icono alt="Lugar">
+                <p class="evento-detalle">
+                    <b>Hora:</b> <span hora></span><br>
+                    <b>Lugar:</b> <span lugar></span><br>
+                    <b>Dirección:</b> <span direccion></span><br>
+                    <a urlMapa target="_blank">Ver en mapa</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- ITINERARIO -->
+        <section itinerario class="itinerario">
+            <h2>Itinerario</h2>
+            <div lista></div>
+        </section>
+
+        <!-- OPCIONES DE GÉNERO -->
+        <section opcionesGenero class="genero">
+            <h2>¿Qué crees que será?</h2>
+            <div lista></div>
+        </section>
+
+        <!-- AGRADECIMIENTO -->
+        <section agradecimiento class="agradecimiento">
+            <img imagen alt="Gracias">
+            <p mensaje></p>
+        </section>
+
+        <!-- CÓDIGO DE VESTIMENTA -->
+        <!--section>
+            <h2>Codigo de vestimenta</h2>
+            <h4 codigoVestimenta></h4>
+        </section-->
+
+    </div>
+
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                Object.entries(data).forEach(([key, value]) => {
+                    // Selecciona todas las secciones con el atributo correspondiente
+                    const sections = document.querySelectorAll('section[' + key + ']');
+
+                    // Si es un objeto
+                    if (sections.length && typeof value === 'object' && !Array.isArray(value)) {
+                        sections.forEach(section => {
+                            Object.entries(value).forEach(([k, v]) => {
+                                // Subnivel dentro del objeto (ej. evento.fecha)
+                                if (typeof v === 'object' && !Array.isArray(v)) {
+                                    const subSection = section.querySelector('[' + k + ']');
+                                    if (subSection) {
+                                        Object.entries(v).forEach(([subKey, subValue]) => {
+                                            const el = subSection.querySelector('[' + subKey + ']');
+                                            if (el) {
+                                                if (el.tagName === 'IMG') el.src = subValue;
+                                                else if (el.tagName === 'A') el.href = subValue;
+                                                else el.textContent = subValue;
+                                            }
+                                        });
+                                    }
+                                } else {
+                                    const el = section.querySelector('[' + k + ']');
+                                    if (el) {
+                                        if (el.tagName === 'IMG') el.src = v;
+                                        else el.textContent = v;
+                                    }
+                                }
+                            });
+                        });
+                    }
+
+                    // Si es un array (itinerario, opcionesGenero)
+                    if (Array.isArray(value)) {
+                        sections.forEach(section => {
+                            const lista = section?.querySelector('[lista]');
+                            if (lista) {
+                                lista.innerHTML = ""; // Limpiar antes de agregar
+                                value.forEach(item => {
+                                    if (key === 'itinerario') {
+                                        lista.innerHTML += `
+                        <div class="itinerario-item">
+                          <h3>${item.etapa}</h3>
+                          <p>${item.descripcion}</p>
+                          <p><b>${item.hora}</b></p>
+                        </div>`;
+                                    } else if (key === 'opcionesGenero') {
+                                        lista.innerHTML += `
+                        <div class="opcion-item">
+                          <img src="${item.icono}" alt="${item.tipo}">
+                          <h3>${item.titulo}</h3>
+                          <p>${item.descripcion}</p>
+                          <p><b>Color:</b> ${item.color}</p>
+                        </div>`;
+                                    }
+                                });
+                            }
+                        });
+                    }
+
+                    // Si es un valor plano (como codigoVestimenta)
+                    if (typeof value === 'string') {
+                        // Selecciona todos los elementos con el atributo correspondiente
+                        const els = document.querySelectorAll('[' + key + ']');
+                        els.forEach(el => {
+                            if (el.tagName === 'IMG') el.src = value;
+                            else el.textContent = value;
+                        });
+                    }
+                });
+            })
+            .catch(() => {
+                document.body.innerHTML += '<h1>No se pudo cargar la invitación.</h1>';
+            });
+    </script>
+</body>
+
+</html>
