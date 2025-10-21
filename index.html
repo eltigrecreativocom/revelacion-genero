@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitación Revelación de Género</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/css/uikit.min.css" />
     <!--fuentes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,99 +15,132 @@
         rel="stylesheet">
     <!--fuentes-->
     <link rel="stylesheet" href="estilos.css">
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit-icons.min.js"></script>
 </head>
 
 <body>
     <div id="contenido">
 
         <!-- ENTRADA -->
-        <section entrada class="entrada">
-            <h1 item1></h1>
-            <span separador></span>
-            <h1 item2></h1>
+        <section entrada class="entrada"
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <h1 style="font-size: 50px;color: black;">Bienvenido a</h1>
+            <h4 style="font-size: 60px;font-weight: 700;">Nuestra</h4>
+            <img src="imagenes/a.png" alt="">
+            <h1 style="font-size: 50px;color: black;">Revelación de Género<br>de</h1>
+            <h2 style="font-size: 60px;font-weight: 700;">Stefany y Brian</h2>
+            <!--h1 item1 class="animate"></h1>
+            <span separador class="animate"></span>
+            <h1 item2 class="animate"></h1-->
         </section>
 
         <!-- SALUDO -->
-        <section saludo class="saludo">
-            <img imagen alt="Saludo">
-            <h1 titulo></h1>
-            <p mensaje></p>
+        <section saludo class="saludo"
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <img imagen alt="Saludo" class="animate">
+            <h1 titulo class="animate"></h1>
+            <p mensaje class="animate"></p>
         </section>
 
         <!-- PRESENTACION -->
-        <section presentacion class="presentacion">
-            <p entrada></p>
+        <section presentacion class="presentacion"
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <p entrada class="animate"></p>
             <!--p frase></p>
             <p><b fraseDestacada></b></p>
             <img imagenEcografia alt="Ecografía"-->
         </section>
-        <section presentacion class="presentacion2">
-            <img ositovolador alt="">
-            <p pronto></p>
+        <section presentacion class="presentacion2"
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <img ositovolador alt="" class="animate">
+            <p pronto class="animate"></p>
         </section>
 
-        <section presentacion class="presentacion3">
-            <p frase></p>
-            <h4><b fraseDestacada></b></h4>
-            <img imagenEcografia alt="Ecografía">
+        <section presentacion class="presentacion3"
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <p frase class="animate"></p>
+            <h4><b fraseDestacada class="animate"></b></h4>
+            <img imagenEcografia alt="Ecografía" class="animate">
         </section>
 
         <!-- PADRES -->
-        <section padres class="padres">
-            <p titulo></p>
-            <h3 nombres></h3>
-            <p fraseInvitacion></p>
+        <section padres class="padres"
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <p titulo class="animate"></p>
+            <h3 nombres class="animate"></h3>
+            <p fraseInvitacion class="animate"></p>
 
             <img imagen alt="Papás">
         </section>
 
         <!-- EVENTO -->
-        <section evento class="evento">
-            <h2>Detalles del Evento</h2>
+        <section evento class="evento"
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <h2 class="animate">Detalles del Evento</h2>
 
-            <div fecha>
-                <p>
-                    <b diaSemana></b>
-                    <span dia></span> de <span mes></span> <span año></span>
-                </p>
+            <div fecha class="animate">
+                <div class="fecha">
+                    <span class="item" diaSemana></span>
+                    <span dia class="dia"></span>
+                    <span class="item" mes></span>
+                </div>
+
+                <img icono alt="" class="relog">
+
                 <p>Hora: <b hora></b></p>
+
             </div>
 
-            <div lugarPrincipal>
-                <h3 titulo></h3>
-                <img icono alt="Lugar">
+            <div lugarPrincipal class="animate">
+                <img icono alt="" class="relog">
+                <p titulo></p>
                 <p class="evento-detalle">
-                    <b>Hora:</b> <span hora></span><br>
                     <b>Lugar:</b> <span lugar></span><br>
-                    <b>Dirección:</b> <span direccion></span><br>
                     <a urlMapa target="_blank">Ver en mapa</a>
                 </p>
             </div>
         </section>
 
         <!-- ITINERARIO -->
-        <section itinerario class="itinerario">
-            <h2>Itinerario</h2>
-            <div lista></div>
-        </section>
+
 
         <!-- OPCIONES DE GÉNERO -->
-        <section opcionesGenero class="genero">
-            <h2>¿Qué crees que será?</h2>
-            <div lista></div>
+        <section nino class="nin" uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <img src="imagenes/nino.jpg" class="item1" alt="" style="width: 100%;">
+            <img icono class="item2 animate">
+            <p titulo class="animate"></p>
+            <p descripcion class="animate"></p>
+            <p color class="animate"></p>
+        </section>
+        <section nina class="nin" uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <img icono class="item2 animate">
+            <p titulo class="animate"></p>
+            <p descripcion class="animate"></p>
+            <p color class="animate"></p>
         </section>
 
         <!-- AGRADECIMIENTO -->
-        <section agradecimiento class="agradecimiento">
-            <img imagen alt="Gracias">
-            <p mensaje></p>
-        </section>
+
 
         <!-- CÓDIGO DE VESTIMENTA -->
-        <!--section>
-            <h2>Codigo de vestimenta</h2>
-            <h4 codigoVestimenta></h4>
-        </section-->
+        <section codigoVestimenta class="vestimenta "
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+            <img imagen alt="" class="animate">
+            <h2 class="animate">Codigo de vestimenta</h2>
+            <ul class="animate">
+                <li class="blanco">Blanco</li>
+                <li class="beige">Beige</li>
+            </ul>
+        </section>
+
+        <section agradecimiento class="agradecimiento"
+            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+
+            <img imagen alt="Gracias" class="animate">
+            <p mensaje class="animate"></p>
+        </section>
 
     </div>
 
@@ -145,29 +180,37 @@
                         });
                     }
 
-                    // Si es un array (itinerario, opcionesGenero)
+                    // Si es un array (itinerario, genero, nino, nina)
                     if (Array.isArray(value)) {
-                        sections.forEach(section => {
-                            const lista = section?.querySelector('[lista]');
-                            if (lista) {
-                                lista.innerHTML = ""; // Limpiar antes de agregar
-                                value.forEach(item => {
-                                    if (key === 'itinerario') {
+                        sections.forEach((section, idx) => {
+                            if (key === 'itinerario') {
+                                const lista = section?.querySelector('[lista]');
+                                if (lista) {
+                                    lista.innerHTML = "";
+                                    value.forEach(item => {
                                         lista.innerHTML += `
                         <div class="itinerario-item">
                           <h3>${item.etapa}</h3>
                           <p>${item.descripcion}</p>
                           <p><b>${item.hora}</b></p>
                         </div>`;
-                                    } else if (key === 'opcionesGenero') {
-                                        lista.innerHTML += `
-                        <div class="opcion-item">
-                          <img src="${item.icono}" alt="${item.tipo}">
-                          <h3>${item.titulo}</h3>
-                          <p>${item.descripcion}</p>
-                          <p><b>Color:</b> ${item.color}</p>
-                        </div>`;
+                                    });
+                                }
+                            } else if (key === 'genero' || key === 'nino' || key === 'nina') {
+                                // Para cada opción, busca los elementos y los rellena
+                                value.forEach((item, arrIdx) => {
+                                    // Si hay varias secciones, asigna por índice
+                                    let targetSection = section;
+                                    if (sections.length > 1) {
+                                        targetSection = sections[arrIdx] || section;
                                     }
+                                    Object.entries(item).forEach(([prop, val]) => {
+                                        const el = targetSection.querySelector('[' + prop + ']');
+                                        if (el) {
+                                            if (el.tagName === 'IMG') el.src = val;
+                                            else el.innerHTML = val;
+                                        }
+                                    });
                                 });
                             }
                         });

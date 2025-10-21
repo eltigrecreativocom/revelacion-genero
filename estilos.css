@@ -9,26 +9,19 @@ body {
   flex-direction: column;
 }
 body #contenido {
-  max-width: 460px;
-  padding: 20px;
+  max-width: 860px;
   text-align: center;
 }
 body #contenido section {
   padding-top: 40px;
   padding-bottom: 40px;
+  min-height: 100vh;
 }
 body #contenido .itinerario-item,
 body #contenido .opcion-item {
-  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 10px;
   margin: 10px 0;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-body #contenido .opcion-item img {
-  width: 80px;
-  height: 80px;
 }
 
 h1,
@@ -47,7 +40,7 @@ p {
 }
 
 .entrada {
-  background: url(imagenes/fondo1.jpg);
+  background: url(imagenes/fondo.jpg);
   min-height: 600px;
   background-size: cover;
   background-position: center;
@@ -83,14 +76,14 @@ p {
 .saludo h1 {
   font-size: 80px;
   margin: 0;
-  color: #5e3b1a;
+  color: #c27347;
   padding: 0;
   line-height: 1;
 }
 .saludo p {
   font-family: "MonteCarlo", cursive;
   font-size: 45px;
-  color: #5e3b1a;
+  color: #c27347;
   margin: 0;
 }
 
@@ -110,14 +103,14 @@ p {
 .presentacion h1 {
   font-size: 80px;
   margin: 0;
-  color: #5e3b1a;
+  color: #c27347;
   padding: 0;
   line-height: 1;
 }
 .presentacion p {
   font-family: "MonteCarlo", cursive;
   font-size: 40px;
-  color: #5e3b1a;
+  color: #c27347;
   margin: 0;
   font-weight: 600;
   max-width: 280px;
@@ -141,14 +134,14 @@ p {
 .presentacion2 h1 {
   font-size: 80px;
   margin: 0;
-  color: #5e3b1a;
+  color: #c27347;
   padding: 0;
   line-height: 1;
 }
 .presentacion2 p {
   font-family: "MonteCarlo", cursive;
   font-size: 40px;
-  color: #5e3b1a;
+  color: #c27347;
   margin: 0;
   font-weight: 600;
   max-width: 280px;
@@ -168,7 +161,7 @@ p {
 .presentacion3 p {
   font-family: "MonteCarlo", cursive;
   font-size: 28px;
-  color: #5e3b1a;
+  color: #c27347;
   margin: 0;
   font-weight: 600;
   max-width: 280px;
@@ -177,7 +170,7 @@ p {
 }
 .presentacion3 h4 {
   font-size: 40px;
-  color: #5e3b1a;
+  color: #c27347;
   margin: 10px 0;
   line-height: 1;
 }
@@ -199,7 +192,7 @@ p {
 .padres p {
   font-family: "MonteCarlo", cursive;
   font-size: 28px;
-  color: #5e3b1a;
+  color: #c27347;
   margin: 0;
   font-weight: 600;
   max-width: 280px;
@@ -208,7 +201,7 @@ p {
 }
 .padres h3 {
   font-size: 40px;
-  color: #5e3b1a;
+  color: #c27347;
   margin: 10px 0;
   line-height: 1;
 }
@@ -218,9 +211,100 @@ p {
   margin-top: 20px;
 }
 
-.agradecimiento,
-.evento,
-.itinerario,
+.agradecimiento {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+.agradecimiento img {
+  max-width: 180px;
+  margin: auto;
+}
+.agradecimiento p {
+  font-family: "MonteCarlo", cursive;
+  font-size: 28px;
+  color: #c27347;
+  margin: 0;
+  font-weight: 600;
+  max-width: 280px;
+  margin: auto;
+  line-height: 1.1;
+}
+
+.evento {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+  gap: 10px;
+}
+.evento h2 {
+  font-size: 40px;
+  margin: 0;
+  color: #c27347;
+  padding: 0;
+  line-height: 1;
+}
+.evento .fecha {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+}
+.evento .fecha .item {
+  padding: 10px;
+  border-top: 5px solid #c27347;
+  border-bottom: 5px solid #c27347;
+  font-size: 28px;
+  font-family: "MonteCarlo", cursive;
+  font-weight: bold;
+  line-height: 1;
+}
+.evento .fecha .dia {
+  font-size: 80px;
+  font-family: "MonteCarlo", cursive;
+  font-weight: bold;
+  margin: 0;
+}
+.evento .relog {
+  margin: auto;
+  width: 50px;
+}
+.evento p {
+  font-size: 15px;
+  color: #c27347;
+  margin: 0;
+  font-weight: 600;
+  max-width: 280px;
+  margin: auto;
+  line-height: 1.1;
+  font-family: "Delius", cursive;
+  margin-bottom: 10px;
+}
+.evento a {
+  text-decoration: none;
+  color: #c27347;
+  font-weight: bold;
+  border-bottom: #5a361c 2px solid;
+}
+
+.itinerario {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+
 .genero {
   background: url(imagenes/fondo1.jpg);
   min-height: 600px;
@@ -230,23 +314,88 @@ p {
   place-content: center;
   padding: 15px;
 }
-.agradecimiento img,
-.evento img,
-.itinerario img,
-.genero img {
-  max-width: 180px;
+.genero .ositos {
+  width: 200px;
+}
+.genero .nino {
+  width: 100%;
+}
+
+.nin {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+.nin .item1 {
+  width: 90%;
   margin: auto;
 }
-.agradecimiento p,
-.evento p,
-.itinerario p,
-.genero p {
-  font-family: "MonteCarlo", cursive;
+.nin .item2 {
+  max-width: 300px;
+  margin: auto;
+}
+
+.vestimenta {
+  background: url(imagenes/fondo1.jpg);
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  padding: 15px;
+}
+.vestimenta img {
+  max-width: 200px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.vestimenta h2 {
   font-size: 40px;
-  color: #5e3b1a;
+  margin: 0;
+  color: #c27347;
+  padding: 0;
+  line-height: 1;
+}
+.vestimenta h4 {
+  font-family: "MonteCarlo", cursive;
+  font-size: 28px;
+  color: #c27347;
   margin: 0;
   font-weight: 600;
   max-width: 280px;
   margin: auto;
   line-height: 1.1;
+}
+.vestimenta ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.vestimenta ul li {
+  width: 80px;
+  height: 80px;
+  border: #ffffff 4px solid;
+  border-radius: 50%;
+  box-shadow: 2px 2px 12px 3px rgba(0, 0, 0, 0.357);
+  display: grid;
+  place-content: center;
+  font-family: "MonteCarlo", cursive;
+  font-size: 30px;
+  font-weight: bold;
+}
+.vestimenta ul .blanco {
+  background-color: #ffffff;
+  color: #c27347;
+}
+.vestimenta ul .beige {
+  background-color: #f5e1c8;
+  color: #c27347;
+}
+.vestimenta ul .agradecimiento {
+  background-color: #f5e1c8;
+  color: #c27347;
 }/*# sourceMappingURL=estilos.css.map */
