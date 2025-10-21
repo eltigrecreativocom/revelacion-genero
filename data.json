@@ -8,21 +8,21 @@
     "saludo": {
         "titulo": "Hola",
         "mensaje": "Familia y amigos",
-        "imagen": "/imagenes/oso.svg"
+        "imagen": "imagenes/oso.svg"
     },
     "presentacion": {
         "entrada": "Estamos muy emocionados de contarles que tendremos un nuevo integrante en la familia.",
         "pronto": "Muy pronto llegará una tierna sonrrisa para llenar de amor nuestro hogar...",
         "frase": "Hace meses vengo creciendo dentro de mi mami y alimentándome del amor de mi papi y queremos compartir con ustedes",
         "fraseDestacada": "¡La gran revelación de mi género!",
-        "imagenEcografia": "/imagenes/eco.jpg",
-        "ositovolador": "/imagenes/osovolador.png"
+        "imagenEcografia": "imagenes/eco.jpg",
+        "ositovolador": "imagenes/osovolador.png"
     },
     "padres": {
         "titulo": "Mis Papitos",
         "nombres": "Stefany y Brian",
         "fraseInvitacion": "Te invitan a descubrirlo...",
-        "imagen": "/imagenes/padres.svg"
+        "imagen": "imagenes/padres.svg"
     },
     "evento": {
         "fecha": {
@@ -32,7 +32,7 @@
             "año": "2025",
             "hora": "12:00",
             "fechaCompleta": "2025-11-02T12:00:00",
-            "icono": "/imagenes/relog.svg"
+            "icono": "imagenes/relog.svg"
         },
         "lugarPrincipal": {
             "titulo": "Lugar de la Revelación",
@@ -40,7 +40,7 @@
             "lugar": "Calle Garcilaso de la Vega n° 171 - Ate",
             "direccion": "Calle Garcilaso de la Vega n° 171 - Ate",
             "urlMapa": "https://maps.app.goo.gl/iHFQWfihBWUUXAdD6?g_st=aw",
-            "icono": "/imagenes/ubicacion.svg"
+            "icono": "imagenes/ubicacion.svg"
         }
     },
     "itinerario": [
@@ -66,7 +66,7 @@
             "titulo": "Si crees que es niño",
             "descripcion": "Venir con prenda <span style='text-decoration: underline;'>celeste</span> y traer pañales.",
             "color": "Azul Celeste",
-            "icono": "/imagenes/nino.png"
+            "icono": "imagenes/nino.png"
         }
     ],
     "nina": [
@@ -75,15 +75,15 @@
             "titulo": "Si crees que es niña",
             "descripcion": "Venir con prenda <span style='text-decoration: underline;'>rosa</span> y traer toallitas húmedas.",
             "color": "Rosa Pastel",
-            "icono": "/imagenes/nina.png"
+            "icono": "imagenes/nina.png"
         }
     ],
     "codigoVestimenta": {
         "texto": "Beige y blanco",
-        "imagen": "/imagenes/vestimenta.svg"
+        "imagen": "imagenes/vestimenta.svg"
     },
     "agradecimiento": {
         "mensaje": "¡Gracias por acompañarnos en este momento tan especial! Estamos emocionados por la llegada de nuestro bebé y agradecidos por compartir esta alegría con ustedes.",
-        "imagen": "/imagenes/agradece.png"
+        "imagen": "imagenes/agradece.png"
     }
 }
