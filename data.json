@@ -62,7 +62,7 @@
     ],
     "nino": [
         {
-            "tipo": "niño",
+            "tipo": "Niño",
             "titulo": "Si crees que es Niño",
             "descripcion": "Venir con prenda <span style='text-decoration: underline;'>celeste</span> y traer pañales.",
             "color": "Azul Celeste",
@@ -71,7 +71,7 @@
     ],
     "nina": [
         {
-            "tipo": "niña",
+            "tipo": "Niña",
             "titulo": "Si crees que es Niña",
             "descripcion": "Venir con prenda <span style='text-decoration: underline;'>rosa</span> y traer toallitas húmedas.",
             "color": "Rosa Pastel",
