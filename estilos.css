@@ -544,6 +544,19 @@ video {
   .vestimenta img {
     max-width: 130px;
   }
+}
+@media (max-width: 600px) and (max-width: 600px) {
+  .presentacion img,
+  .saludo img,
+  .agradecimiento img,
+  .padres img,
+  .presentacion2 img,
+  .presentacion3 img,
+  .vestimenta img {
+    max-width: 180px;
+  }
+}
+@media (max-width: 600px) {
   .cuadro {
     max-width: 100vw;
     padding: 8px;
