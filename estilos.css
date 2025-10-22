@@ -553,7 +553,7 @@ video {
   .presentacion2 img,
   .presentacion3 img,
   .vestimenta img {
-    max-width: 180px;
+    max-width: 280px;
   }
 }
 @media (max-width: 600px) {
