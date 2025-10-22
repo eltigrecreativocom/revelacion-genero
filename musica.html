@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Botón Play / Pause</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f3f4f6;
+            margin: 0
+        }
+
+        .player {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(2, 6, 23, 0.08)
+        }
+
+        button {
+            all: unset;
+            cursor: pointer;
+            display: inline-grid;
+            place-items: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(2, 6, 23, 0.08);
+            transition: transform .15s ease, background .15s;
+        }
+
+        button:active {
+            transform: scale(.98)
+        }
+
+        .title {
+            font-weight: 600
+        }
+
+        .muted {
+            font-size: 13px;
+            color: #6b7280
+        }
+
+        /* small responsive */
+        @media (max-width:420px) {
+            .player {
+                flex-direction: column;
+                padding: 16px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player" role="region" aria-label="Reproductor simple">
+        <!-- Cambia el src por la ruta a tu archivo .mp3/.ogg (no funciona directamente con enlaces de YouTube) -->
+        <audio id="audio" src="/imagenes/musica.mp3" preload="metadata"></audio>
+
+        <button id="playPause" aria-label="Reproducir" title="Reproducir">
+            <!-- Icono "play" (se reemplaza dinámicamente en JS) -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        // Elementos
+        const audio = document.getElementById('audio');
+        const btn = document.getElementById('playPause');
+        const durationEl = document.getElementById('duration');
+
+        // SVGs como strings para cambiar el contenido del botón
+        const playSVG = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
+      </svg>`;
+
+        const pauseSVG = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/>
+      </svg>`;
+
+        // Inicial
+        btn.innerHTML = playSVG;
+
+        // Mostrar duración cuando esté disponible
+        audio.addEventListener('loadedmetadata', () => {
+            const sec = Math.floor(audio.duration || 0);
+            durationEl.textContent = formatTime(sec);
+        });
+
+        // Play / Pause al hacer click
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                btn.setAttribute('aria-label', 'Pausar');
+                btn.title = 'Pausar';
+                btn.innerHTML = pauseSVG;
+            } else {
+                audio.pause();
+                btn.setAttribute('aria-label', 'Reproducir');
+                btn.title = 'Reproducir';
+                btn.innerHTML = playSVG;
+            }
+        });
+
+        // Si la canción termina, volver al estado play
+        audio.addEventListener('ended', () => {
+            btn.setAttribute('aria-label', 'Reproducir');
+            btn.title = 'Reproducir';
+            btn.innerHTML = playSVG;
+        });
+
+        // Mantener el icono en sincronía si el audio se pausa/reproduce por otros medios
+        audio.addEventListener('play', () => { btn.innerHTML = pauseSVG; btn.setAttribute('aria-label', 'Pausar'); });
+        audio.addEventListener('pause', () => { btn.innerHTML = playSVG; btn.setAttribute('aria-label', 'Reproducir'); });
+
+        // Función utilitaria para formatear tiempo mm:ss
+        function formatTime(s) {
+            if (!isFinite(s)) return '0:00';
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60).toString().padStart(2, '0');
+            return `${m}:${sec}`;
+        }
+
+        // Soporte de teclado: espacio o enter activan el botón
+        btn.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' || e.key === ' ' || e.key === 'Enter') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
+    </script>
+</body>
+
+</html>

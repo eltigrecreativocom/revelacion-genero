@@ -16,13 +16,13 @@
         "frase": "Hace meses vengo creciendo dentro de mi mami y alimentándome del amor de mi papi y queremos compartir con ustedes",
         "fraseDestacada": "¡La gran revelación de mi género!",
         "imagenEcografia": "imagenes/eco.jpg",
-        "ositovolador": "imagenes/osovolador.png"
+        "ositovolador": "imagenes/oso.svg"
     },
     "padres": {
         "titulo": "Mis Papitos",
         "nombres": "Stefany y Brian",
         "fraseInvitacion": "Te invitan a descubrirlo...",
-        "imagen": "imagenes/padres.svg"
+        "imagen": "imagenes/pareja.jpg"
     },
     "evento": {
         "fecha": {
@@ -30,7 +30,7 @@
             "dia": "02",
             "mes": "Noviembre",
             "año": "2025",
-            "hora": "12:00",
+            "hora": "12:00 (mediodía)",
             "fechaCompleta": "2025-11-02T12:00:00",
             "icono": "imagenes/relog.svg"
         },
@@ -39,7 +39,7 @@
             "hora": "12:00",
             "lugar": "Calle Garcilaso de la Vega n° 171 - Ate",
             "direccion": "Calle Garcilaso de la Vega n° 171 - Ate",
-            "urlMapa": "https://maps.app.goo.gl/iHFQWfihBWUUXAdD6?g_st=aw",
+            "urlMapa": "https://maps.app.goo.gl/4B7mn9ZNP7QYsqTPA?g_st=iw",
             "icono": "imagenes/ubicacion.svg"
         }
     },

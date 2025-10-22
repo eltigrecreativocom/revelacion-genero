@@ -7,6 +7,8 @@
     <title>Invitación Revelación de Género</title>
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/css/uikit.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!--fuentes-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,89 +17,140 @@
         rel="stylesheet">
     <!--fuentes-->
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="swiper-fix.css">
     <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.19.4/dist/js/uikit-icons.min.js"></script>
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .player {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 50%;
+            box-shadow: 0 6px 20px rgb(2 6 23 / 70%);
+            position: absolute;
+            z-index: 1111;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        button {
+            all: unset;
+            cursor: pointer;
+            display: inline-grid;
+            place-items: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(2, 6, 23, 0.08);
+            transition: transform .15s ease, background .15s;
+        }
+
+        button:active {
+            transform: scale(.98)
+        }
+
+        .title {
+            font-weight: 600
+        }
+
+        .muted {
+            font-size: 13px;
+            color: #6b7280
+        }
+
+        /* small responsive */
+        @media (max-width:420px) {
+            .player {
+                flex-direction: column;
+                padding: 16px
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <div id="contenido">
-
+<body class="swiper mySwiper">
+    <div id="contenido" class="swiper-wrapper">
         <!-- ENTRADA -->
-        <section entrada class="entrada"
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <h1 style="font-size: 50px;color: black;">Bienvenido a</h1>
-            <h4 style="font-size: 60px;font-weight: 700;">Nuestra</h4>
-            <img src="imagenes/a.png" alt="">
-            <h1 style="font-size: 50px;color: black;">Revelación de Género<br>de</h1>
-            <h2 style="font-size: 60px;font-weight: 700;">Stefany y Brian</h2>
-            <!--h1 item1 class="animate"></h1>
+        <!--section entrada class="entrada swiper-slide">
+            <h1 style="font-size: 50px;color: black;" data-swiper-parallax="-300">Bienvenido a</h1>
+            <h4 style="font-size: 60px;font-weight: 700;margin:0" data-swiper-parallax="-400">Nuestra</h4>
+            <img src="imagenes/a.png" alt="" data-swiper-parallax="-300">
+            <h1 style="font-size: 50px;color: black;" data-swiper-parallax="-500">Revelación de Género<br>de</h1>
+            <h2 style="font-size: 60px;font-weight: 700;" data-swiper-parallax="-600">Stefany y Brian</h2>
+            <h1 item1 class="animate"></h1>
             <span separador class="animate"></span>
-            <h1 item2 class="animate"></h1-->
-        </section>
+            <h1 item2 class="animate"></h1>
+        </section-->
 
         <!-- SALUDO -->
-        <section saludo class="saludo"
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <img imagen alt="Saludo" class="animate">
-            <h1 titulo class="animate"></h1>
-            <p mensaje class="animate"></p>
+        <section saludo class="saludo swiper-slide">
+            <img imagen alt="Saludo" class="animate" data-swiper-parallax="-600">
+            <h1 titulo class="animate" data-swiper-parallax="-500"></h1>
+            <p mensaje class="animate" data-swiper-parallax="-400"></p>
         </section>
 
         <!-- PRESENTACION -->
-        <section presentacion class="presentacion"
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <p entrada class="animate"></p>
-            <!--p frase></p>
+        <!--section presentacion class="presentacion swiper-slide">
+            <p entrada class="animate" data-swiper-parallax="-500"></p>
+            <p frase></p>
             <p><b fraseDestacada></b></p>
             <img imagenEcografia alt="Ecografía"-->
-        </section>
-        <section presentacion class="presentacion2"
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <img ositovolador alt="" class="animate">
-            <p pronto class="animate"></p>
+        </section-->
+        <section presentacion class="presentacion2 swiper-slide">
+            <p entrada class="animate" data-swiper-parallax="-500"></p>
+
+            <p pronto class="animate" data-swiper-parallax="-500"></p>
+            <img ositovolador alt="" class="animate" data-swiper-parallax="-800">
+
         </section>
 
-        <section presentacion class="presentacion3"
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <p frase class="animate"></p>
-            <h4><b fraseDestacada class="animate"></b></h4>
-            <img imagenEcografia alt="Ecografía" class="animate">
+        <section presentacion class="presentacion3 swiper-slide">
+            <p frase class="animate" data-swiper-parallax="-300"></p>
+            <br>
+            <img imagenEcografia alt="Ecografía" class="animate" data-swiper-parallax="-300">
+
+            <h4><b fraseDestacada class="animate" data-swiper-parallax="-300"></b></h4>
         </section>
 
         <!-- PADRES -->
-        <section padres class="padres"
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <p titulo class="animate"></p>
-            <h3 nombres class="animate"></h3>
-            <p fraseInvitacion class="animate"></p>
+        <section padres class="padres swiper-slide">
+            <p titulo class="animate" data-swiper-parallax="-300"></p>
+            <h3 nombres class="animate" data-swiper-parallax="-300"></h3>
+            <p fraseInvitacion class="animate" data-swiper-parallax="-300"></p>
 
-            <img imagen alt="Papás">
+            <img imagen alt="Papás " data-swiper-parallax="-300">
         </section>
 
         <!-- EVENTO -->
-        <section evento class="evento"
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <h2 class="animate">Detalles del Evento</h2>
-
-            <div fecha class="animate">
+        <section evento class="evento swiper-slide">
+            <h2 class="animate" data-swiper-parallax="-300">Detalles del Evento</h2>
+            <br>
+            <div fecha class="animate" data-swiper-parallax="-300">
                 <div class="fecha">
-                    <span class="item" diaSemana></span>
-                    <span dia class="dia"></span>
-                    <span class="item" mes></span>
+                    <span class="item" diaSemana data-swiper-parallax="-300"></span>
+                    <span dia class="dia" data-swiper-parallax="-300"></span>
+                    <span class="item" mes data-swiper-parallax="-300"></span>
                 </div>
 
-                <img icono alt="" class="relog">
+                <img icono alt="" class="relog" data-swiper-parallax="-300">
+                <br>
+                <br>
 
-                <p>Hora: <b hora></b></p>
+                <p data-swiper-parallax="-300">Hora: <b hora></b></p>
 
             </div>
+            <br>
 
-            <div lugarPrincipal class="animate">
-                <img icono alt="" class="relog">
-                <p titulo></p>
-                <p class="evento-detalle">
-                    <b>Lugar:</b> <span lugar></span><br>
+            <div lugarPrincipal class="animate" data-swiper-parallax="-300">
+                <img icono alt="" class="relog" data-swiper-parallax="-300">
+                <br>
+                <br>
+                <p titulo data-swiper-parallax="-300"></p>
+                <p class="evento-detalle" data-swiper-parallax="-300">
+                    <b>Lugar:</b> <span lugar data-swiper-parallax="-300"></span><br>
                     <a urlMapa target="_blank">Ver en mapa</a>
                 </p>
             </div>
@@ -107,43 +160,69 @@
 
 
         <!-- OPCIONES DE GÉNERO -->
-        <section nino class="nin" uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <img src="imagenes/nino.jpg" class="item1" alt="" style="width: 100%;">
-            <img icono class="item2 animate">
-            <p titulo class="animate"></p>
-            <p descripcion class="animate"></p>
-            <p color class="animate"></p>
+        <!--section nino class="nin swiper-slide">
+            <h1>Niño o Niña</h1>
+            <h4>Que sera el bebe?</h4>
+            <img icono class="item2 animate" data-swiper-parallax="-300">
+            <p titulo class="animate" data-swiper-parallax="-300"></p>
+            <p descripcion class="animate" data-swiper-parallax="-300"></p>
+            <p color class="animate" data-swiper-parallax="-300"></p>
         </section>
-        <section nina class="nin" uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <img icono class="item2 animate">
-            <p titulo class="animate"></p>
-            <p descripcion class="animate"></p>
-            <p color class="animate"></p>
-        </section>
+        <section nina class="nin swiper-slide">
+            <img icono class="item2 animate" data-swiper-parallax="-300">
+            <p titulo class="animate" data-swiper-parallax="-300"></p>
+            <p descripcion class="animate" data-swiper-parallax="-300"></p>
+            <p color class="animate" data-swiper-parallax="-300"></p>
+        </section-->
 
         <!-- AGRADECIMIENTO -->
 
 
         <!-- CÓDIGO DE VESTIMENTA -->
-        <section codigoVestimenta class="vestimenta "
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
-            <img imagen alt="" class="animate">
-            <h2 class="animate">Codigo de vestimenta</h2>
-            <ul class="animate">
-                <li class="blanco">Blanco</li>
-                <li class="beige">Beige</li>
-            </ul>
+        <section codigoVestimenta class="vestimenta swiper-slide">
+            <div class="cuadro">
+                <img imagen alt="" class="animate" data-swiper-parallax="-300">
+                <h2 class="animate" data-swiper-parallax="-300">Codigo de vestimenta</h2>
+                <ul class="animate">
+                    <li class="blanco" data-swiper-parallax="-300">Blanco</li>
+                    <li class="beige" data-swiper-parallax="-300">Beige</li>
+                </ul>
+            </div>
+
+            <br>
+            <br>
+            <div class="cuadro">
+                <h2>Si crees que es niño</h2>
+                <p>Traer pañales.(Huggies Dermacare)</p>
+                <br>
+                <br>
+                <h2>Si crees que es niña</h2>
+                <p>Traer toallitas húmedas.(Babysec Aqua)</p>
+            </div>
         </section>
 
-        <section agradecimiento class="agradecimiento"
-            uk-scrollspy="target: > .animate; cls: uk-animation-fade; delay: 500;repeat: true">
+        <section agradecimiento class="agradecimiento swiper-slide">
 
-            <img imagen alt="Gracias" class="animate">
-            <p mensaje class="animate"></p>
+            <img imagen alt="Gracias" class="animate" data-swiper-parallax="-300">
+            <p mensaje class="animate" data-swiper-parallax="-300"></p>
         </section>
 
     </div>
 
+
+    <div class="player" role="region" aria-label="Reproductor simple">
+        <!-- Cambia el src por la ruta a tu archivo .mp3/.ogg (no funciona directamente con enlaces de YouTube) -->
+        <audio id="audio" src="/imagenes/musica.mp3" preload="metadata"></audio>
+
+        <button id="playPause" aria-label="Reproducir" title="Reproducir">
+            <!-- Icono "play" (se reemplaza dinámicamente en JS) -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                <path d="M8 5v14l11-7L8 5z" fill="currentColor" />
+            </svg>
+        </button>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         fetch('data.json')
             .then(response => response.json())
@@ -231,6 +310,97 @@
                 document.body.innerHTML += '<h1>No se pudo cargar la invitación.</h1>';
             });
     </script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 7500,
+                disableOnInteraction: true,
+            },
+            parallax: true,
+            speed: 800,
+            effect: "fade",
+            transition: "0.5s",
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
+
+    <script>
+        // Elementos
+        const audio = document.getElementById('audio');
+        const btn = document.getElementById('playPause');
+        const durationEl = document.getElementById('duration');
+
+        // SVGs como strings para cambiar el contenido del botón
+        const playSVG = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
+      </svg>`;
+
+        const pauseSVG = `
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+        <path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/>
+      </svg>`;
+
+        // Inicial
+        btn.innerHTML = playSVG;
+
+        // Mostrar duración cuando esté disponible
+        audio.addEventListener('loadedmetadata', () => {
+            const sec = Math.floor(audio.duration || 0);
+            durationEl.textContent = formatTime(sec);
+        });
+
+        // Play / Pause al hacer click
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                btn.setAttribute('aria-label', 'Pausar');
+                btn.title = 'Pausar';
+                btn.innerHTML = pauseSVG;
+            } else {
+                audio.pause();
+                btn.setAttribute('aria-label', 'Reproducir');
+                btn.title = 'Reproducir';
+                btn.innerHTML = playSVG;
+            }
+        });
+
+        // Si la canción termina, volver al estado play
+        audio.addEventListener('ended', () => {
+            btn.setAttribute('aria-label', 'Reproducir');
+            btn.title = 'Reproducir';
+            btn.innerHTML = playSVG;
+        });
+
+        // Mantener el icono en sincronía si el audio se pausa/reproduce por otros medios
+        audio.addEventListener('play', () => { btn.innerHTML = pauseSVG; btn.setAttribute('aria-label', 'Pausar'); });
+        audio.addEventListener('pause', () => { btn.innerHTML = playSVG; btn.setAttribute('aria-label', 'Reproducir'); });
+
+        // Función utilitaria para formatear tiempo mm:ss
+        function formatTime(s) {
+            if (!isFinite(s)) return '0:00';
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60).toString().padStart(2, '0');
+            return `${m}:${sec}`;
+        }
+
+        // Soporte de teclado: espacio o enter activan el botón
+        btn.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' || e.key === ' ' || e.key === 'Enter') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
+    </script>
+
 </body>
 
 </html>
