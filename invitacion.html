@@ -72,15 +72,6 @@
 </head>
 
 <body class="swiper mySwiper">
-    <!-- Modal de invitación -->
-    <div id="modal-invitacion"
-        style="position:fixed;z-index:99999;top:0;left:0;width:100vw;height:100vh;background:rgba(255,255,255,0.97);display:flex;align-items:center;justify-content:center;flex-direction:column;">
-        <h2 style="font-family:'MonteCarlo',cursive;font-size:2.5rem;color:#5d3a1c;margin-bottom:2rem;">¡Bienvenido!
-        </h2>
-        <button id="btn-ver-invitacion"
-            style="font-size:1.5rem;padding:1rem 2.5rem;background:#d6bc9d;color:#fff;border:none;border-radius:2rem;box-shadow:0 2px 8px #0002;cursor:pointer;font-family:'Delius',cursive;width:200px">Ver
-            invitación</button>
-    </div>
     <div id="contenido" class="swiper-wrapper">
         <!-- ENTRADA -->
         <!--section entrada class="entrada swiper-slide">
@@ -343,17 +334,28 @@
         // Elementos
         const audio = document.getElementById('audio');
         const btn = document.getElementById('playPause');
+        const durationEl = document.getElementById('duration');
+
         // SVGs como strings para cambiar el contenido del botón
         const playSVG = `
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
       </svg>`;
+
         const pauseSVG = `
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
         <path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor"/>
       </svg>`;
+
         // Inicial
         btn.innerHTML = playSVG;
+
+        // Mostrar duración cuando esté disponible
+        audio.addEventListener('loadedmetadata', () => {
+            const sec = Math.floor(audio.duration || 0);
+            durationEl.textContent = formatTime(sec);
+        });
+
         // Play / Pause al hacer click
         btn.addEventListener('click', () => {
             if (audio.paused) {
@@ -368,35 +370,31 @@
                 btn.innerHTML = playSVG;
             }
         });
+
         // Si la canción termina, volver al estado play
         audio.addEventListener('ended', () => {
             btn.setAttribute('aria-label', 'Reproducir');
             btn.title = 'Reproducir';
             btn.innerHTML = playSVG;
         });
+
         // Mantener el icono en sincronía si el audio se pausa/reproduce por otros medios
         audio.addEventListener('play', () => { btn.innerHTML = pauseSVG; btn.setAttribute('aria-label', 'Pausar'); });
         audio.addEventListener('pause', () => { btn.innerHTML = playSVG; btn.setAttribute('aria-label', 'Reproducir'); });
+
+        // Función utilitaria para formatear tiempo mm:ss
+        function formatTime(s) {
+            if (!isFinite(s)) return '0:00';
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60).toString().padStart(2, '0');
+            return `${m}:${sec}`;
+        }
+
         // Soporte de teclado: espacio o enter activan el botón
         btn.addEventListener('keydown', (e) => {
             if (e.code === 'Space' || e.key === ' ' || e.key === 'Enter') {
                 e.preventDefault();
                 btn.click();
-            }
-        });
-
-        // MODAL: Mostrar al cargar y manejar cierre + autoplay
-        const modal = document.getElementById('modal-invitacion');
-        const btnVer = document.getElementById('btn-ver-invitacion');
-        btnVer.addEventListener('click', function () {
-            modal.style.display = 'none';
-            // Intentar reproducir la música automáticamente
-            if (audio.paused) {
-                audio.play().then(() => {
-                    btn.setAttribute('aria-label', 'Pausar');
-                    btn.title = 'Pausar';
-                    btn.innerHTML = pauseSVG;
-                }).catch(() => { });
             }
         });
     </script>

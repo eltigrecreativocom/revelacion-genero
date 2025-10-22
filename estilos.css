@@ -420,6 +420,7 @@ video {
   color: #5d3a1c;
   padding: 0;
   line-height: 1;
+  font-weight: BOLD;
 }
 .vestimenta h4 {
   font-family: "MonteCarlo", cursive;
@@ -504,35 +505,35 @@ video {
   .saludo h1,
   .presentacion h1,
   .presentacion2 h1 {
-    font-size: 32px;
+    font-size: 38px;
   }
   .saludo p,
   .presentacion p,
   .presentacion2 p {
-    font-size: 18px;
+    font-size: 30px;
   }
   .evento h2,
   .padres h3,
   .presentacion3 h4,
   .vestimenta h2 {
-    font-size: 18px;
+    font-size: 22px;
   }
   .evento .fecha .dia {
-    font-size: 32px;
+    font-size: 36px;
   }
   .evento .fecha .item {
-    font-size: 18px;
+    font-size: 28px;
   }
   .presentacion3 p,
   .padres p,
   .agradecimiento p,
   .vestimenta h4 {
-    font-size: 16px;
+    font-size: 28px;
   }
   .vestimenta ul li {
-    width: 48px;
-    height: 48px;
-    font-size: 16px;
+    width: 54px;
+    height: 54px;
+    font-size: 28px;
   }
   .presentacion img,
   .saludo img,
@@ -541,10 +542,10 @@ video {
   .presentacion2 img,
   .presentacion3 img,
   .vestimenta img {
-    max-width: 120px;
+    max-width: 130px;
   }
   .cuadro {
     max-width: 100vw;
-    padding: 6px;
+    padding: 8px;
   }
 }/*# sourceMappingURL=estilos.css.map */
